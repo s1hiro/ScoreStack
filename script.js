@@ -1,3 +1,5 @@
+// sidenav toggler
+
 let sideNavButton = document.getElementById("sideNav-button");
 let sideNav = document.getElementById("sidenav");
 
@@ -33,3 +35,6 @@ sideNavButton.onclick = function () {
     sideNavButton.innerHTML = openIcon;
   }
 };
+
+// new thing
+
