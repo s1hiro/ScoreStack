@@ -1,0 +1,230 @@
+/* Default's */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html, body {
+    height: calc(100vh - 80px); 
+}
+
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    
+}
+
+/* topnav.css */
+
+.topnav {
+    border-top: 2px solid #3d3d3d;
+    border-left: 2px solid #3d3d3d;
+    border-right: 2px solid #3d3d3d;
+    height: 80px;
+    width: 100vw;
+    background-image: linear-gradient(to right, #061726,#538083,  #538083);
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+}
+
+#top-separator {
+    background-color: #3d3d3d;
+    z-index: 1001;
+    width: 1px;
+    height: 80px;
+    position: fixed;
+    left: 18vw;
+}
+
+#TLIcon svg {
+    stroke: #fee86f;
+    vector-effect: non-scaling-stroke;  
+    transform: scale(2);
+    transform-origin: center; 
+    z-index: 1001;
+    position: fixed;
+    left: 30px;
+    top: 30px;
+}
+
+#IconText {
+    color: white;
+    position: fixed;
+    left: 80px;
+    top: 30px;
+    font-size: 20px;
+}
+
+#TNTopLeft {
+    z-index: 1003;
+    width: 340px;
+    height: 80px;
+    background-color: rgba(10,10,10,.4);
+    border-radius: 10px;
+}
+
+/* sidenav.css */
+
+.main-sidenav-divider {
+    border-color: #183955;
+    width: 300px;
+    margin-left: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+}
+
+.sidenav-section {
+    text-align: center; 
+}
+
+.sidenav-section a {
+    display: inline-block;  
+    font-size: 25px;
+    color: #C81D25;
+    height: auto;
+    background-color: rgba(200, 29, 38, 0.3);
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.sidenav-summary {
+    color: #FBF5F3;
+    padding: 10px;
+}
+
+.sidenav-divider {
+    border-color: #183955;
+    margin-left: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 175px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+}
+
+.last-sidenav-divider {
+    border-color: #183955;
+    margin-left: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 115px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+}
+
+#catimg, #nissanimg {
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+#sideNav-button {
+    z-index: 100000;
+    transition: 0.2s ease;
+    background: none;      
+    border: none;          
+    cursor: pointer;       
+    padding: 0;         
+    font-size: 16px;
+    position: fixed;
+    top: 30px;      
+    left: 300px;  
+}
+
+#sideNav-button svg {
+    vector-effect: non-scaling-stroke;  
+    transform: scale(1.5);
+    transform-origin: center; 
+    stroke: white;
+}
+
+#sidenav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #3d3d3d;
+    background-color: #061726;
+    color: #FBF5F3;
+    width: 18vw;
+    transition: width 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+}
+
+#sidenav.collapsed {
+    width: 0;
+}
+
+#sidenav.collapsed * {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#sidenav:not(.collapsed) * {
+    opacity: 1;
+}
+
+/* end */
+
+
+/* maincontent.css */
+
+.main-layout-area {    
+    display: flex;
+    border: 1px solid #3d3d3d;
+    display: flex;
+    position: relative;
+    margin-top: 80px; 
+    height: calc(100vh - 80px); 
+    overflow: hidden; 
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #3d3d3d;
+    background-color: #538083;
+    color: #061726;
+    transition: width 0.5s ease, flex-grow 0.5s ease;
+    scrollbar-width: thin;
+    scrollbar-color: #C81D25 rgba(0,0,0,0); 
+}
+
+#sidenav.collapsed ~ .main-content {
+    left: 0;
+}
+
+#main-text {
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(6, 23, 38, 0.25);
+    margin: 10px; 
+    padding: 10px;
+}
+
+#header1 {
+    font-size: 60px;
+}
+
+#welcsummary, #p1, #p2 {
+    color: black;
+}
+
+#welcsummary {
+    font-size: 25px;
+}
+
+#p1 {
+    font-size: 17px;
+}
+
+/* end */
