@@ -8,20 +8,15 @@
 </head>
 
 <body>
-            <!-- AKA TN -->
+    <!-- AKA TN -->
     <nav class="topnav TN">
-
         <div id="TNTopLeft">
             <div id="TLIcon">
                 <!-- put icon here -->
             </div>
-
             <div id="IconText">ScoreStack</div>
-
             <div id="top-separator"></div>
-
         </div>
-
     </nav>
 
     <div class="main-layout-area">
@@ -29,7 +24,6 @@
         <button id="sideNav-button">Open</button>
 
         <aside id="sidenav">
-
             <div class="sidenav-section sidenav-summary">
                 <h3>About this..</h3>
                 <br>
@@ -37,21 +31,18 @@
                 <p class="subtext">Have a look</p>
             </div>
             <hr class="main-sidenav-divider">
+
             <div class="sidenav-section">
-
-                <a id="s1" href="index.html">Home</a>
+                <a href="index.html">Home</a>
                 <br>
-                <a id="s2" href="about.html">About</a>
+                <a href="about.html">About</a>
                 <br>
-                <a id="s1" href="study.html">Study</a>
+                <a href="study.html">Study</a>
                 <br>
-                <a id="s2" href="whySS.html">Why ScoreStack?</a>
+                <a href="whySS.html">Why ScoreStack?</a>
                 <br>
-
                 <hr class="sidenav-divider">
-
             </div>
-
         </aside>
 
         <div class="main-content">
@@ -71,12 +62,20 @@
                     like ACT, AP Course Content, and grades under highschool too! For now, we are only doing <i>flashcards</i> for the SAT.
                 </p>
             </div>
-        </div>
 
+            <!-- Flashcard Creator Section -->
+            <section id="flashcard-section">
+                <h1>Flashcard Creator</h1>
+                <form id="flashcardForm">
+                    <input type="text" id="question" placeholder="Enter question" required>
+                    <input type="text" id="answer" placeholder="Enter answer" required>
+                    <button type="submit">Add Flashcard</button>
+                </form>
+                <div class="flashcard-container" id="flashcardContainer"></div>
+            </section>
+        </div>
     </div>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>

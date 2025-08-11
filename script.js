@@ -1,40 +1,68 @@
-// sidenav toggler
+// sidenav code
 
-let sideNavButton = document.getElementById("sideNav-button");
-let sideNav = document.getElementById("sidenav");
+const flashcards = JSON.parse(localStorage.getItem("flashcards")) || [];
+const flashcardForm = document.getElementById('flashcardForm');
+const flashcardContainer = document.getElementById('flashcardContainer');
 
-const openIcon = `
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-  class="lucide lucide-panel-right-open-icon lucide-panel-right-open">
-  <rect width="18" height="18" x="3" y="3" rx="2"/>
-  <path d="M15 3v18"/>
-  <path d="m10 15-3-3 3-3"/>
-</svg>
-`;
+// Render any saved flashcards on page load
+flashcards.forEach(renderFlashcard);
 
-const closeIcon = `
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-  class="lucide lucide-panel-right-close-icon lucide-panel-right-close">
-  <rect width="18" height="18" x="3" y="3" rx="2"/>
-  <path d="M15 3v18"/>
-  <path d="m8 9 3 3-3 3"/>
-</svg>
-`;
+flashcardForm.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-sideNavButton.innerHTML = openIcon;
+  const question = document.getElementById('question').value.trim();
+  const answer = document.getElementById('answer').value.trim();
 
-sideNavButton.onclick = function () {
-  sideNav.classList.toggle("collapsed");
+  if (question && answer) {
+    const flashcard = { question, answer };
+    flashcards.push(flashcard);
 
-  // Switch icon based on sidebar state
-  if (sideNav.classList.contains("collapsed")) {
-    sideNavButton.innerHTML = closeIcon;
-  } else {
-    sideNavButton.innerHTML = openIcon;
+    // localstorage save
+    localStorage.setItem("flashcards", JSON.stringify(flashcards));
+
+    renderFlashcard(flashcard);
+    flashcardForm.reset();
   }
-};
+});
 
-// new thing
+function renderFlashcard(card) {
+  const cardElement = document.createElement('div');
+  cardElement.classList.add('flashcard');
+
+  // delete button
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = "❌";
+  deleteBtn.classList.add('delete-btn');
+  deleteBtn.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent flipping on delete
+    deleteFlashcard(card);
+    cardElement.remove();
+  });
+
+  // Container for question/answer text
+  const textElement = document.createElement('div');
+  textElement.textContent = card.question;
+
+  let showingQuestion = true;
+  cardElement.addEventListener('click', function() {
+    textElement.textContent = showingQuestion ? card.answer : card.question;
+    showingQuestion = !showingQuestion;
+  });
+
+  // Append delete button + text to flashcard
+  cardElement.appendChild(deleteBtn);
+  cardElement.appendChild(textElement);
+
+  flashcardContainer.appendChild(cardElement);
+}
+
+function deleteFlashcard(cardToDelete) {
+  const index = flashcards.findIndex(c => 
+    c.question === cardToDelete.question && c.answer === cardToDelete.answer
+  );
+  if (index > -1) {
+    flashcards.splice(index, 1);
+    localStorage.setItem("flashcards", JSON.stringify(flashcards));
+  }
+}
 
