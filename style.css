@@ -247,7 +247,7 @@ body {
 }
 
 #scoreStack {
-    background-image: linear-gradient(to right, var(--yellowish), var(--green), var(--Lgreen));
+    background-image: linear-gradient(23deg, var(--yellowish), var(--green), var(--Lgreen));
     background-clip: text;
     color: transparent;
 }
