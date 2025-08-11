@@ -38,3 +38,35 @@ sideNavButton.onclick = function () {
 
 // new thing
 
+const flashcards = [];
+const flashcardForm = document.getElementById('flashcardForm');
+const flashcardContainer = document.getElementById('flashcardContainer');
+
+flashcardForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Stop form refresh
+
+  const question = document.getElementById('question').value.trim();
+  const answer = document.getElementById('answer').value.trim();
+
+  if (question && answer) {
+    const flashcard = { question, answer };
+    flashcards.push(flashcard);
+    renderFlashcard(flashcard);
+    flashcardForm.reset();
+  }
+});
+
+function renderFlashcard(card) {
+  const cardElement = document.createElement('div');
+  cardElement.classList.add('flashcard');
+  cardElement.textContent = card.question;
+
+  let showingQuestion = true;
+
+  cardElement.addEventListener('click', function() {
+    cardElement.textContent = showingQuestion ? card.answer : card.question;
+    showingQuestion = !showingQuestion;
+  });
+
+  flashcardContainer.appendChild(cardElement);
+}
