@@ -5,6 +5,14 @@
     box-sizing: border-box; 
 }
 
+:root {
+    --black: #1C1C1C;
+    --white: #EEF0F2;
+    --yellowish: #DEE12E;
+    --Lgreen: #ACE64E;
+    --green: #54A85C;
+}
+
 html, body {
     height: calc(100vh - 80px); 
 }
@@ -22,7 +30,7 @@ body {
     border-right: 2px solid #3d3d3d;
     height: 80px;
     width: 100vw;
-    background-image: linear-gradient(to right, #061726,#538083,  #538083);
+    background-image: linear-gradient(to right, var(--yellowish), var(--Lgreen),  var(--green));
     position: fixed; 
     top: 0; 
     left: 0; 
@@ -38,21 +46,16 @@ body {
     left: 18vw;
 }
 
-#TLIcon svg {
-    stroke: #fee86f;
-    vector-effect: non-scaling-stroke;  
-    transform: scale(2);
-    transform-origin: center; 
-    z-index: 1001;
-    position: fixed;
-    left: 30px;
-    top: 30px;
+#logo {
+    border-radius: 10%;
+    margin-left: 10px;
+    margin-top: 8px;
 }
 
 #IconText {
-    color: white;
+    color: var(--white);
     position: fixed;
-    left: 80px;
+    left: 85px;
     top: 30px;
     font-size: 20px;
 }
@@ -65,10 +68,34 @@ body {
     border-radius: 10px;
 }
 
+/* end */
+
+/* study2.css */
+
+#backBtn {
+    position: fixed;
+    top: 90px; /* Just below your 80px navbar */
+    left: 20px;
+    background-color: rgb(0, 26, 163); /* Match your .accessButton style */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+    z-index: 1100; /* Above content */
+}
+
+#backBtn:hover {
+    background-color: #00148a;
+}
+
+
 /* sidenav.css */
 
 .main-sidenav-divider {
-    border-color: #183955;
+    border-color: var(--yellowish);
     width: 300px;
     margin-left: 3px;
     margin-top: 5px;
@@ -85,9 +112,9 @@ body {
 .sidenav-section a {
     display: inline-block;  
     font-size: 25px;
-    color: #C81D25;
+    color: var(--Lgreen);
     height: auto;
-    background-color: rgba(200, 29, 38, 0.3);
+    background-color: rgba(84, 168, 92, 0.3);
     text-decoration: none;
     padding: 10px;
     margin: 5px;
@@ -96,12 +123,12 @@ body {
 }
 
 .sidenav-summary {
-    color: #FBF5F3;
+    color: var(--white);
     padding: 10px;
 }
 
 .sidenav-divider {
-    border-color: #183955;
+    border-color: var(--green);
     margin-left: 3px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -109,6 +136,12 @@ body {
     border-style: solid;
     border-width: 1px;
     border-radius: 15px;
+}
+
+#aboutTitle {
+    background-image: linear-gradient(to right, var(--yellowish), var(--green), var(--Lgreen));
+    background-clip: text;
+    color: transparent;
 }
 
 .last-sidenav-divider {
@@ -152,7 +185,7 @@ body {
     flex-direction: column;
     align-items: center;
     border: 1px solid #3d3d3d;
-    background-color: #061726;
+    background-color: var(--black);
     color: #FBF5F3;
     width: 18vw;
     flex-shrink: 0;
@@ -194,11 +227,11 @@ body {
     overflow-x: hidden;
     min-width: 0;
     border: 1px solid #3d3d3d;
-    background-color: #538083;
-    color: #061726;
+    background-color: var(--black);
+    color: var(--white);
     transition: width 0.5s ease, flex-grow 0.5s ease;
     scrollbar-width: thin;
-    scrollbar-color: #C81D25 rgba(0,0,0,0); 
+    scrollbar-color: var(--green) rgba(0,0,0,0); 
 }
 
 #sidenav.collapsed ~ .main-content {
@@ -213,13 +246,14 @@ body {
     padding: 10px;
 }
 
+#scoreStack {
+    background-image: linear-gradient(to right, var(--yellowish), var(--green), var(--Lgreen));
+    background-clip: text;
+    color: transparent;
+}
 
 #header1 {
     font-size: 60px;
-}
-
-#welcsummary, #p1, #p2 {
-    color: black;
 }
 
 #welcsummary {
@@ -230,15 +264,21 @@ body {
     font-size: 17px;
 }
 
-
-
-
-
 /* Flashcard Creator Styles */
+
+
 #flashcard-section h1 {
-  text-align: center;
-  margin-top: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
 }
+
+#flashcard-section {
+    margin: 100px auto 0 auto; /* top, sides auto, bottom */
+    max-width: 800px; /* optional for nicer centering */
+}
+
 
 #flashcardForm {
   text-align: center;
@@ -256,6 +296,13 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+/* Black background for flashcards page */
+body.flashcards {
+    background-color: var(--black);
+}
+
+
 
 .flashcard {
   position: relative; /* Needed for delete button positioning */
@@ -298,3 +345,86 @@ body {
 }
 
 /* end */
+
+/* gradeSelection.css */
+
+.cardBadge {
+    color: #fff;
+    background-color: #008196;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: baseline;
+    text-decoration: underline;
+    width: 153.05px;
+    border-radius: 5px;
+}
+
+#classcards {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    width: 1620px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 5px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid ;
+    border-radius: 10px;
+    border-color: rgb(215, 223, 227);
+    width: 372px;
+    overflow: hidden;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.card img {
+    width: 372px;
+    height: 248px;
+}
+
+#cardBody {
+    background-color: #fffffe;
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 1.40625rem;
+    color: #0020c9;
+    text-decoration: underline;
+    line-height: 1.2;
+    word-wrap: break-word;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.card-footer {
+    padding: 12px 20px 12px 20px;
+    background-color: rgba(10, 10, 10, 0.03);
+}
+
+.accessButton {
+    vertical-align: middle;
+    background-color: rgb(0, 26, 163);
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    text-decoration: underline;
+    border-width: 1px;
+    border-top: rgb(215, 223, 227);
+    width: 74.35px;
+    height: 36.5px;
+    float: right;
+}
+
+/* end */
+

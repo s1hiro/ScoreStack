@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ScoreStack</title>
+    <link rel="stylesheet" href="../style.css">
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script defer src="../init-firebase.js"></script>
+
+</head>
+
+<body>
+
+    <!-- AKA TN -->
+    <nav class="topnav TN">
+        <div id="TNTopLeft">
+            <div id="TLIcon">
+                <!-- put icon here -->
+            </div>
+            <div id="IconText">ScoreStack</div>
+            <div id="top-separator"></div>
+        </div>
+    </nav>
+
+    <div class="main-layout-area">
+
+        <button id="sideNav-button">Open</button>
+
+        <aside id="sidenav">
+            <div class="sidenav-section sidenav-summary">
+                <h3 id="aboutTitle">About this..</h3>
+                <br>
+                <p class="subtext">This section will be some basic navigation, along with a couple of my interests!</p>
+                <p class="subtext">Have a look</p>
+            </div>
+            <hr class="main-sidenav-divider">
+
+            <div class="sidenav-section">
+                <a href="../index.html">Home</a>
+                <br>
+                <a href="../about.html">About</a>
+                <br>
+                <a href="">Study</a>
+                <br>
+                <a href="../whySS.html">Why ScoreStack?</a>
+                <br>
+
+            </div>
+            <hr class="sidenav-divider">
+        </aside>
+
+        <div class="main-content">
+            <div id="main-text">
+                <h1 id="header1">Hey!</h1>
+                <br>
+                <p id="welcsummary">
+                    Welcome to <span id="scoreStack">ScoreStack</span>! Glad you chose us to study for your exams.
+                </p>
+                <br>
+                <p id="p1">
+                    To the left, if you haven't closed it, is a navigation bar for some categories of
+                    information, take a look! And if you want to come back, press on the Home tab.
+                </p>
+                <p id="p2">
+                    ScoreStack is a website which has <i>flashcard</i> based studying tools for SAT prep. We plan to add
+                    more subjects
+                    like ACT, AP Course Content, and grades under highschool too! For now, we are only doing
+                    <i>flashcards</i> for the SAT.
+                </p>
+            </div>
+
+            <div id="gradeSelection">
+                <div id="classcards">
+
+                    <div class="card">
+                        <img src="https://www.lms.allstarcode.org/theme/moove/pix/default_course.jpg">
+
+                        <div id="cardBody">
+                            <h4 class="card-title">2025 Summer Intensive - Week 1</h4>
+                        </div>
+
+                        <div class="card-footer">
+
+                            <a href="study2.html" class="accessButton">Access</a>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+                        <img src="https://www.lms.allstarcode.org/theme/moove/pix/default_course.jpg">
+
+                        <div id="cardBody">
+                            <h4 class="card-title">2025 Summer Intensive - Week 2</h4>
+                        </div>
+
+                        <div class="card-footer">
+
+                            <button class="accessButton">Access</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+                        <img src="https://www.lms.allstarcode.org/theme/moove/pix/default_course.jpg">
+
+                        <div id="cardBody">
+                            <h4 class="card-title">2025 Summer Intensive - Week 3</h4>
+                        </div>
+
+                        <div class="card-footer">
+
+                            <button class="accessButton">Access</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+                        <img src="https://www.lms.allstarcode.org/theme/moove/pix/default_course.jpg">
+
+                        <div id="cardBody">
+                            <h4 class="card-title">2025 Summer Intensive - Week 4</h4>
+                        </div>
+
+                        <div class="card-footer">
+
+                            <button class="accessButton" id="flashcardToggleBtn">Access</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../defscript.js"></script>
+
+</body>
+
+</html>

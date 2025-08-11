@@ -66,3 +66,19 @@ function deleteFlashcard(cardToDelete) {
   }
 }
 
+document.getElementById("flashcardToggleBtn").addEventListener("click", function () {
+    const section = document.getElementById("flashcard-section");
+
+    if (section.style.display === "none" || section.style.display === "") {
+        section.style.display = "block";
+        this.textContent = "Hide Flashcards";
+    } else {
+        section.style.display = "none";
+        this.textContent = "Access";
+    }
+});
+
+document.getElementById("backBtn").addEventListener("click", function () {
+    window.location.href = "study.html";
+});
+

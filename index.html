@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>ScoreStack</title>
     <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="scoreBig.png" type="image/x-icon">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
 
         <div id="TNTopLeft">
             <div id="TLIcon">
-                <!-- put icon here -->
+                <img id="logo" src="scorestack.png" alt="logo" width="65" height="65">
             </div>
 
             <div id="IconText">ScoreStack</div>
@@ -31,7 +32,7 @@
         <aside id="sidenav">
 
             <div class="sidenav-section sidenav-summary">
-                <h3>About this..</h3>
+                <h3 id="aboutTitle">About this..</h3>
                 <br>
                 <p class="subtext">This section will be some basic navigation, along with a couple of my interests!</p>
                 <p class="subtext">Have a look</p>
@@ -43,15 +44,12 @@
                 <br>
                 <a id="s2" href="about.html">About</a>
                 <br>
-                <a id="s1" href="study.html">Study</a>
+                <a id="s1" href="study/study.html">Study</a>
                 <br>
                 <a id="s2" href="whySS.html">Why ScoreStack?</a>
                 <br>
-
-                <hr class="sidenav-divider">
-
             </div>
-
+            <hr class="sidenav-divider">
         </aside>
 
         <div class="main-content">
@@ -59,7 +57,7 @@
                 <h1 id="header1">Hey!</h1>
                 <br>
                 <p id="welcsummary">
-                    Welcome to ScoreStack! Glad you chose us to study for your exams.
+                    Welcome to <span id="scoreStack">ScoreStack</span>! Glad you chose us to study for your exams.
                 </p>
                 <br>
                 <p id="p1">
@@ -75,7 +73,7 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="defscript.js"></script>
 
 </body>
 
