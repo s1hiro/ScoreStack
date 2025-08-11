@@ -258,6 +258,7 @@ body {
 }
 
 .flashcard {
+  position: relative; /* Needed for delete button positioning */
   width: 200px;
   height: 120px;
   background-color: white;
@@ -270,10 +271,30 @@ body {
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: transform 0.3s;
+  padding: 10px;
+  text-align: center;
 }
 
 .flashcard:hover {
   transform: scale(1.05);
+}
+
+/* Delete button styling */
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #c00;
+  padding: 0;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  color: #f00;
 }
 
 /* end */
