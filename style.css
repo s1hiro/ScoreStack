@@ -26,6 +26,7 @@ body {
 /* topnav.css */
 
 .topnav {
+    display: flex;
     border-top: 2px solid #3d3d3d;
     border-left: 2px solid #3d3d3d;
     border-right: 2px solid #3d3d3d;
@@ -36,6 +37,41 @@ body {
     top: 0; 
     left: 0; 
     z-index: 1000; 
+    align-items: center;
+}
+
+#searchInput {
+    position: absolute;
+    left: calc(18vw + 15px);
+    padding: 15px;
+    width: 156.667px;
+    height: 16px;
+    background-color: var(--black);
+    color: var(--white);
+    border-color: rgba(229, 103, 23, 0);
+    border-radius: 3px;
+    font-size: 16px;
+    outline: 0 none;
+    z-index: 1000;
+}
+
+#searchResultsContainer {
+
+}
+
+#searchResults {
+    position: absolute;
+    left: calc(18vw + 15px);
+    z-index: 999;
+    padding: 15px;
+    width: 156.667px;
+    height: 16px;
+    background-color: var(--black);
+    color: var(--white);
+    border-color: rgba(229, 103, 23, 0);
+    border-radius: 3px;
+    font-size: 16px;
+    outline: 0 none;
 }
 
 #top-separator {
@@ -305,13 +341,12 @@ body.flashcards {
     background-color: var(--black);
 }
 
-
-
 .flashcard {
   position: relative; /* Needed for delete button positioning */
   width: 200px;
   height: 120px;
   background-color: white;
+  color: var(--black);
   border: 2px solid #ccc;
   border-radius: 10px;
   margin: 10px;

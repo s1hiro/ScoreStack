@@ -1,5 +1,4 @@
 // sidenav toggler
-
 let sideNavButton = document.getElementById("sideNav-button");
 let sideNav = document.getElementById("sidenav");
 
@@ -35,3 +34,30 @@ sideNavButton.onclick = function () {
     sideNavButton.innerHTML = openIcon;
   }
 };
+
+let resultDD = document.getElementById("searchResults");
+
+// Dictionary of pages
+const siteIndex = {
+  home: { title: "Home", url: "index.html", keywords: "welcome intro overview" },
+  about: { title: "About", url: "about.html", keywords: "bio background profile" },
+  education: { title: "Study", url: "study/study.html", keywords: "SAT school degree university study" },
+  WhyScoreStack: { title: "Why ScoreStack", url: "whySS.html", keywords: "projects jobs career" }
+};
+
+document.getElementById('searchInput').addEventListener('input', function() {
+  const query = this.value.toLowerCase();
+  const resultsList = document.getElementById('searchResults');
+  resultsList.innerHTML = "";
+  resultDD.showPicker();
+
+  for (let key in siteIndex) {
+    let page = siteIndex[key];
+    if ( page.title.toLowerCase().includes(query) || page.keywords.toLowerCase().includes(query)) {
+      const rOption = document.createElement('option');
+      rOption.innerHTML = page.title;
+      rOption.value = page.title;
+      resultsList.appendChild(rOption);
+    }
+  }
+});

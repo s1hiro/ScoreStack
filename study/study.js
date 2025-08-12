@@ -1,31 +1,35 @@
-// sidenav code
+let database = firebase.database().ref();
 
 const flashcards = JSON.parse(localStorage.getItem("flashcards")) || [];
 const flashcardForm = document.getElementById('flashcardForm');
 const flashcardContainer = document.getElementById('flashcardContainer');
 
 // Render any saved flashcards on page load
-flashcards.forEach(renderFlashcard);
+console.log("type", typeof database)
+console.log(database)
+database.on("child_added", renderFlashcard);
 
-flashcardForm.addEventListener('submit', function(event) {
+flashcardForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
   const question = document.getElementById('question').value.trim();
   const answer = document.getElementById('answer').value.trim();
 
   if (question && answer) {
-    const flashcard = { question, answer };
-    flashcards.push(flashcard);
+    if (question != answer) {
+      const flashcard = { question, answer };
+      database.push(flashcard);
 
-    // localstorage save
-    localStorage.setItem("flashcards", JSON.stringify(flashcards));
-
-    renderFlashcard(flashcard);
-    flashcardForm.reset();
+      flashcardForm.reset();
+    } else {
+      alert("Question and answer cannot be the same.");
+    }
   }
 });
 
 function renderFlashcard(card) {
+  const key = card.key;
+  card = card.val();
   const cardElement = document.createElement('div');
   cardElement.classList.add('flashcard');
 
@@ -33,18 +37,20 @@ function renderFlashcard(card) {
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = "❌";
   deleteBtn.classList.add('delete-btn');
-  deleteBtn.addEventListener('click', function(e) {
+  deleteBtn.addEventListener('click', function (e) {
     e.stopPropagation(); // Prevent flipping on delete
-    deleteFlashcard(card);
+    deleteFlashcard(key);
     cardElement.remove();
   });
+  deleteBtn.id = key;
 
   // Container for question/answer text
   const textElement = document.createElement('div');
+  console.log(card)
   textElement.textContent = card.question;
 
   let showingQuestion = true;
-  cardElement.addEventListener('click', function() {
+  cardElement.addEventListener('click', function () {
     textElement.textContent = showingQuestion ? card.answer : card.question;
     showingQuestion = !showingQuestion;
   });
@@ -57,28 +63,5 @@ function renderFlashcard(card) {
 }
 
 function deleteFlashcard(cardToDelete) {
-  const index = flashcards.findIndex(c => 
-    c.question === cardToDelete.question && c.answer === cardToDelete.answer
-  );
-  if (index > -1) {
-    flashcards.splice(index, 1);
-    localStorage.setItem("flashcards", JSON.stringify(flashcards));
-  }
+  database.child(cardToDelete).remove();
 }
-
-document.getElementById("flashcardToggleBtn").addEventListener("click", function () {
-    const section = document.getElementById("flashcard-section");
-
-    if (section.style.display === "none" || section.style.display === "") {
-        section.style.display = "block";
-        this.textContent = "Hide Flashcards";
-    } else {
-        section.style.display = "none";
-        this.textContent = "Access";
-    }
-});
-
-document.getElementById("backBtn").addEventListener("click", function () {
-    window.location.href = "study.html";
-});
-

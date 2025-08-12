@@ -8,4 +8,6 @@ const firebaseConfig = {
   measurementId: "G-KRMZ50X41Q"
 };
 
+firebase.initializeApp(firebaseConfig);
+
 // https://score-stack-project-default-rtdb.firebaseio.com/

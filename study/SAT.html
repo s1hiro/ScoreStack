@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="../style.css">
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script defer src="../init-firebase.js"></script>
+    <script defer src="study.js"></script>
+</head>
+
+<body>
+
+
+    <nav class="topnav TN">
+        <div id="TNTopLeft">
+            <div id="TLIcon">
+                <img id="logo" src="../scorestack.png" alt="logo" width="65" height="65">
+            </div>
+            <div id="IconText">ScoreStack</div>
+        </div>
+    </nav>
+
+    <div class="main-layout-area">
+        <button id="sideNav-button">Open</button>
+
+        <aside id="sidenav">
+
+            <div class="sidenav-section sidenav-summary">
+                <h3 id="aboutTitle">About this..</h3>
+                <br>
+                <p class="subtext">This section will be some basic navigation, along with a couple of my interests!</p>
+                <p class="subtext">Have a look</p>
+            </div>
+            <hr class="main-sidenav-divider">
+            <div class="sidenav-section">
+
+                <a id="s1" href="../index.html">Home</a>
+                <br>
+                <a id="s2" href="../about.html">About</a>
+                <br>
+                <a id="s1" href="study.html">Study</a>
+                <br>
+                <a id="s2" href="../whySS.html">Why ScoreStack?</a>
+                <br>
+            </div>
+            <hr class="sidenav-divider">
+        </aside>
+
+        <div class="main-content">
+            <div id="main-text">
+                <p id="welcsummary">
+                    This is the <i>Flashcard</i> creating section for the SAT. We plan to add <span style="text-decoration: underline;">our own flashcards</span> here soon, but for now you can 
+                    upload your own and save it.
+                </p>
+                <br>
+                <p id="p1">
+                    ScoreStack is a website which has <i>flashcard</i> based studying tools for SAT prep. We plan to add
+                    more subjects
+                    like ACT, AP Course Content, and grades under highschool too! For now, we are only doing
+                    <i>flashcards</i> for the SAT.
+                </p>
+                <p>
+                    Whether you are just beginning your preperation or aiming to refine your skills before the exam,
+                    ScoreStack offers tools and stratgies to
+            </div>
+
+            <section id="flashcard-section">
+                <h1>Flashcard Creator</h1>
+                <form id="flashcardForm">
+                    <input type="text" id="question" placeholder="Enter question" required>
+                    <input type="text" id="answer" placeholder="Enter answer" required>
+                    <button type="submit">Add Flashcard</button>
+                </form>
+                <div class="flashcard-container" id="flashcardContainer"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="../defscript.js"></script>
+</body>
+
+</html>
