@@ -55,10 +55,6 @@ body {
     z-index: 1000;
 }
 
-#searchResultsContainer {
-
-}
-
 #searchResults {
     position: absolute;
     left: calc(18vw + 15px);

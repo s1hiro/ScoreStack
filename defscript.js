@@ -45,19 +45,19 @@ const siteIndex = {
   WhyScoreStack: { title: "Why ScoreStack", url: "whySS.html", keywords: "projects jobs career" }
 };
 
-document.getElementById('searchInput').addEventListener('input', function() {
-  const query = this.value.toLowerCase();
-  const resultsList = document.getElementById('searchResults');
-  resultsList.innerHTML = "";
-  resultDD.showPicker();
+// document.getElementById('searchInput').addEventListener('input', function() {
+//   const query = this.value.toLowerCase();
+//   const resultsList = document.getElementById('searchResults');
+//   resultsList.innerHTML = "";
+//   resultDD.showPicker();
 
-  for (let key in siteIndex) {
-    let page = siteIndex[key];
-    if ( page.title.toLowerCase().includes(query) || page.keywords.toLowerCase().includes(query)) {
-      const rOption = document.createElement('option');
-      rOption.innerHTML = page.title;
-      rOption.value = page.title;
-      resultsList.appendChild(rOption);
-    }
-  }
-});
+//   for (let key in siteIndex) {
+//     let page = siteIndex[key];
+//     if ( page.title.toLowerCase().includes(query) || page.keywords.toLowerCase().includes(query)) {
+//       const rOption = document.createElement('option');
+//       rOption.innerHTML = page.title;
+//       rOption.value = page.title;
+//       resultsList.appendChild(rOption);
+//     }
+//   }
+// });
