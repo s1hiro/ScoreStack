@@ -468,5 +468,39 @@ body.flashcards {
     float: left;
 }
 
+
+
+
+/* Mobile Navbar (top) */
+@media screen and (max-width: 768px) {
+  #sidenav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    background-color: #333 !important; /* your nav background */
+    padding: 0.5rem 0 !important;
+    z-index: 1000 !important;
+  }
+
+  #sidenav a {
+    display: block !important;
+    padding: 0.5rem !important;
+    font-size: 1rem !important;
+    color: white !important;
+    text-decoration: none !important;
+  }
+
+  /* Push page content down so it doesn't hide behind nav */
+  body {
+    padding-top: 3.5rem !important;
+  }
+}
+
 /* end */
 
