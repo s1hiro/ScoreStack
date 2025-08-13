@@ -41,23 +41,52 @@ let resultDD = document.getElementById("searchResults");
 const siteIndex = {
   home: { title: "Home", url: "index.html", keywords: "welcome intro overview" },
   about: { title: "About", url: "about.html", keywords: "bio background profile" },
-  education: { title: "Study", url: "study/study.html", keywords: "SAT school degree university study" },
-  WhyScoreStack: { title: "Why ScoreStack", url: "whySS.html", keywords: "projects jobs career" }
+  education: { title: "Study", url: "study.html", keywords: "SAT school degree university study" },
+  WhyScoreStack: { title: "Why ScoreStack", url: "whySS.html", keywords: "projects jobs career better reason" }
 };
 
-// document.getElementById('searchInput').addEventListener('input', function() {
-//   const query = this.value.toLowerCase();
-//   const resultsList = document.getElementById('searchResults');
-//   resultsList.innerHTML = "";
-//   resultDD.showPicker();
+const searchInput = document.getElementById('searchInput');
+const searchDropdown = document.getElementById('searchDropdown');
 
-//   for (let key in siteIndex) {
-//     let page = siteIndex[key];
-//     if ( page.title.toLowerCase().includes(query) || page.keywords.toLowerCase().includes(query)) {
-//       const rOption = document.createElement('option');
-//       rOption.innerHTML = page.title;
-//       rOption.value = page.title;
-//       resultsList.appendChild(rOption);
-//     }
-//   }
-// });
+searchInput.addEventListener('input', function () {
+    const query = this.value.toLowerCase().trim();
+    searchDropdown.innerHTML = "";
+
+    if (!query) {
+        searchDropdown.style.display = "none";
+        return;
+    }
+
+    let matches = [];
+
+    for (let key in siteIndex) {
+        let page = siteIndex[key];
+        if (page.title.toLowerCase().includes(query) || page.keywords.toLowerCase().includes(query)) {
+            matches.push(page);
+        }
+    }
+
+    if (matches.length > 0) {
+        matches.forEach(page => {
+            const option = document.createElement('div');
+            option.textContent = page.title;
+            option.addEventListener('click', () => {
+                searchInput.value = page.title;
+                searchDropdown.style.display = "none";
+                // navigate if desired:
+                window.location.href = page.url;
+            });
+            searchDropdown.appendChild(option);
+        });
+        searchDropdown.style.display = "block";
+    } else {
+        searchDropdown.style.display = "none";
+    }
+});
+
+// Hide dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (!document.getElementById('search-container').contains(e.target)) {
+        searchDropdown.style.display = "none";
+    }
+});

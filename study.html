@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>ScoreStack</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script defer src="../init-firebase.js"></script>
+    <script defer src="init-firebase.js"></script>
 
 </head>
 
@@ -17,11 +17,17 @@
     <nav class="topnav TN">
         <div id="TNTopLeft">
             <div id="TLIcon">
-                <img id="logo" src="../scorestack.png" alt="logo" width="65" height="65">
+                <img id="logo" src="scorestack.png" alt="logo" width="65" height="65">
             </div>
             <div id="IconText">ScoreStack</div>
             <div id="top-separator"></div>
         </div>
+
+        <div id="search-container">
+            <input type="text" id="searchInput" placeholder="Search site...">
+            <div id="searchDropdown" class="dropdown"></div>
+        </div>
+
     </nav>
 
     <div class="main-layout-area">
@@ -38,13 +44,13 @@
             <hr class="main-sidenav-divider">
 
             <div class="sidenav-section">
-                <a href="../index.html">Home</a>
+                <a href="index.html">Home</a>
                 <br>
-                <a href="../about.html">About</a>
+                <a href="about.html">About</a>
                 <br>
                 <a href="">Study</a>
                 <br>
-                <a href="../whySS.html">Why ScoreStack?</a>
+                <a href="whySS.html">Why ScoreStack?</a>
                 <br>
 
             </div>
@@ -68,7 +74,8 @@
                 <div id="classcards">
 
                     <div class="card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/SAT_logo_%282017%29.svg/1200px-SAT_logo_%282017%29.svg.png">
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/SAT_logo_%282017%29.svg/1200px-SAT_logo_%282017%29.svg.png">
 
                         <div id="cardBody">
                             <h4 class="card-title">SAT Prep - (Sample questions available)</h4>
@@ -83,7 +90,8 @@
                     </div>
 
                     <div class="card">
-                        <img src="https://i0.wp.com/inewsource.org/wp-content/uploads/2017/08/ledeact.jpg?fit=2100%2C1500&ssl=1">
+                        <img
+                            src="https://i0.wp.com/inewsource.org/wp-content/uploads/2017/08/ledeact.jpg?fit=2100%2C1500&ssl=1">
 
                         <div id="cardBody">
                             <h4 class="card-title">ACT Prep - (Sample questions <i>not</i> made)</h4>
@@ -98,7 +106,8 @@
                     </div>
 
                     <div class="card">
-                        <img src="https://d35tcbo7v606fs.cloudfront.net/wp-content/uploads/2014/03/17193914/AP-Classes-1.png">
+                        <img
+                            src="https://d35tcbo7v606fs.cloudfront.net/wp-content/uploads/2014/03/17193914/AP-Classes-1.png">
 
                         <div id="cardBody">
                             <h4 class="card-title">AP Courses, Select subject inside</h4>
@@ -135,7 +144,7 @@
 
     </div>
 
-    <script src="../defscript.js"></script>
+    <script src="defscript.js"></script>
 
 </body>
 
