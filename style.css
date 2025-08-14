@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 :root {
@@ -14,13 +14,14 @@
     --green: #54A85C;
 }
 
-html, body {
-    height: calc(100vh - 80px); 
+html,
+body {
+    height: calc(100vh - 80px);
 }
 
 body {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    
+
 }
 
 /* topnav.css */
@@ -32,11 +33,11 @@ body {
     border-right: 2px solid #3d3d3d;
     height: 80px;
     width: 100vw;
-    background-image: linear-gradient(to right, var(--yellowish), var(--Lgreen),  var(--green));
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    z-index: 1000; 
+    background-image: linear-gradient(to right, var(--yellowish), var(--Lgreen), var(--green));
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     align-items: center;
 }
 
@@ -57,14 +58,14 @@ body {
     outline: none;
 }
 
-
 .dropdown {
     position: absolute;
     background-color: var(--black);
     color: var(--white);
     width: 156.667px;
     border-radius: 3px;
-    display: none; /* hidden by default */
+    display: none;
+    /* hidden by default */
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
@@ -108,7 +109,7 @@ body {
     z-index: 1003;
     width: 18vw;
     height: 80px;
-    background-color: rgba(10,10,10,.4);
+    background-color: rgba(10, 10, 10, .4);
 }
 
 /* end */
@@ -117,9 +118,11 @@ body {
 
 #backBtn {
     position: fixed;
-    top: 90px; /* Just below your 80px navbar */
+    top: 90px;
+    /* Just below your 80px navbar */
     left: 20px;
-    background-color: rgb(0, 26, 163); /* Match your .accessButton style */
+    background-color: rgb(0, 26, 163);
+    /* Match your .accessButton style */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -127,7 +130,8 @@ body {
     font-size: 16px;
     cursor: pointer;
     text-decoration: underline;
-    z-index: 1100; /* Above content */
+    z-index: 1100;
+    /* Above content */
 }
 
 #backBtn:hover {
@@ -149,11 +153,11 @@ body {
 }
 
 .sidenav-section {
-    text-align: center; 
+    text-align: center;
 }
 
 .sidenav-section a {
-    display: inline-block;  
+    display: inline-block;
     font-size: 25px;
     color: var(--Lgreen);
     height: auto;
@@ -165,12 +169,30 @@ body {
     vertical-align: middle;
 }
 
+#cont2 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.s1 {
+    font-size: 40px;
+}
+
 .sidenav-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 40%;
     color: var(--white);
     padding: 10px;
 }
 
 .sidenav-divider {
+    display: flex;
+    justify-content: center;
     border-color: var(--green);
     margin-left: 3px;
     margin-top: 5px;
@@ -198,7 +220,8 @@ body {
     border-radius: 15px;
 }
 
-#catimg, #nissanimg {
+#catimg,
+#nissanimg {
     vertical-align: middle;
     margin-right: 3px;
 }
@@ -206,20 +229,20 @@ body {
 #sideNav-button {
     z-index: 100000;
     transition: 0.2s ease;
-    background: none;      
-    border: none;          
-    cursor: pointer;       
-    padding: 0;         
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
     font-size: 16px;
     position: fixed;
-    top: 30px;      
-    left: 300px;  
+    top: 30px;
+    left: 300px;
 }
 
 #sideNav-button svg {
-    vector-effect: non-scaling-stroke;  
+    vector-effect: non-scaling-stroke;
     transform: scale(1.5);
-    transform-origin: center; 
+    transform-origin: center;
     stroke: white;
 }
 
@@ -254,14 +277,14 @@ body {
 
 /* maincontent.css */
 
-.main-layout-area {    
+.main-layout-area {
     display: flex;
     border: 1px solid #3d3d3d;
     display: flex;
     position: relative;
-    margin-top: 80px; 
-    height: calc(100vh - 80px); 
-    overflow: hidden; 
+    margin-top: 80px;
+    height: calc(100vh - 80px);
+    overflow: hidden;
 }
 
 .main-content {
@@ -274,18 +297,17 @@ body {
     color: var(--white);
     transition: width 0.5s ease, flex-grow 0.5s ease;
     scrollbar-width: thin;
-    scrollbar-color: var(--green) rgba(0,0,0,0); 
+    scrollbar-color: var(--green) rgba(0, 0, 0, 0);
 }
 
-#sidenav.collapsed ~ .main-content {
-    left: 0;
-}
+    #sidenav.collapsed~.main-content {
+        left: 0;
+    }
 
 #main-text {
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    background-color: rgba(6, 23, 38, 0.25);
-    margin: 10px; 
+    margin: 10px;
     padding: 10px;
 }
 
@@ -320,26 +342,28 @@ body {
 }
 
 #flashcard-section {
-    margin: 100px auto 0 auto; /* top, sides auto, bottom */
-    max-width: 800px; /* optional for nicer centering */
+    margin: 100px auto 0 auto;
+    /* top, sides auto, bottom */
+    max-width: 800px;
+    /* optional for nicer centering */
 }
 
 
 #flashcardForm {
-  text-align: center;
-  margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-#flashcardForm input, 
+#flashcardForm input,
 #flashcardForm button {
-  padding: 8px;
-  margin: 5px;
+    padding: 8px;
+    margin: 5px;
 }
 
 .flashcard-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Black background for flashcards page */
@@ -348,44 +372,45 @@ body.flashcards {
 }
 
 .flashcard {
-  position: relative; /* Needed for delete button positioning */
-  width: 200px;
-  height: 120px;
-  background-color: white;
-  color: var(--black);
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  margin: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-  padding: 10px;
-  text-align: center;
+    position: relative;
+    /* Needed for delete button positioning */
+    width: 200px;
+    height: 120px;
+    background-color: white;
+    color: var(--black);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    padding: 10px;
+    text-align: center;
 }
 
 .flashcard:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* Delete button styling */
 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: transparent;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  color: #c00;
-  padding: 0;
-  line-height: 1;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #c00;
+    padding: 0;
+    line-height: 1;
 }
 
 .delete-btn:hover {
-  color: #f00;
+    color: #f00;
 }
 
 /* end */
@@ -419,7 +444,7 @@ body.flashcards {
 .card {
     display: flex;
     flex-direction: column;
-    border: 2px solid ;
+    border: 2px solid;
     border-radius: 10px;
     border-color: rgb(0, 0, 0);
     width: 372px;
@@ -468,39 +493,69 @@ body.flashcards {
     float: left;
 }
 
-
-
-
 /* Mobile Navbar (top) */
 @media screen and (max-width: 1000px) {
-  #sidenav {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-around !important;
-    align-items: center !important;
-    background-color: #333 !important; /* your nav background */
-    padding: 0.5rem 0 !important;
-    z-index: 1000 !important;
-  }
+    #sidenav {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 145px;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        background-color: var(--black) !important;
+        padding: 0.5rem 0 !important;
+        z-index: 1000 !important;
+        transition: height 0.3s ease, opacity 0.3s ease;
+        opacity: 1;
+    }
 
-  #sidenav a {
-    display: block !important;
-    padding: 0.5rem !important;
-    font-size: 1rem !important;
-    color: white !important;
-    text-decoration: none !important;
-  }
+    .s1 {
+        padding: 2.5px !important;
+        font-size: 20px !important;
+    }
 
-  /* Push page content down so it doesn't hide behind nav */
-  body {
-    padding-top: 3.5rem !important;
-  }
+    .s2 {
+        padding: 2px !important;
+    }
+
+    .sidenav-section {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 110px;
+    }
+
+    #sideNav-button {
+        left: 30px !important;
+        top: 25px !important;
+    }
+
+    #sidenav.collapsed {
+        height: 0;
+        opacity: 0;
+    }
+
+    .main-content {
+        transition: margin-top 0.3s ease, padding-left 0.3s ease;
+    }
+
+    #sidenav.collapsed~.main-content {
+        height: calc(100vh);
+        transform: translateY(-110px);
+    }
+
+    /* Push page content down so it doesn't hide behind nav */
+    body {
+        padding-top: 3.5rem !important;
+    }
+
+    .topnav {
+        display: none;
+    }
 }
 
 /* end */
-
