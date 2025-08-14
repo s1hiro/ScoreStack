@@ -502,7 +502,7 @@ body.flashcards {
         top: 0;
         left: 0;
         width: 100% !important;
-        height: 345px;
+        height: 290px;
         display: flex;
         flex-direction: row;
         background-color: var(--black);
@@ -520,21 +520,21 @@ body.flashcards {
 
     .s1 {
         padding: 5px !important;
-        font-size: 40px !important;
+        font-size: 70px !important;
     }
 
     .s2 {
-        font-size: 50px !important;
+        font-size: 70px !important;
         padding: 2px !important;
     }
 
     .sidenav-section {
-        width: 100%;
+        width: 600px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        height: 110px;
+        height: auto;
     }
 
     #sideNav-button {
@@ -553,7 +553,7 @@ body.flashcards {
 
     .main-content {
         position: fixed;
-        top: 345px;
+        top: 290px;
         height: 100%;
         transition: 0.3s ease;
     }
