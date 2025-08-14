@@ -496,7 +496,7 @@ body.flashcards {
 }
 
 /* Mobile Navbar (top) */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     #sidenav {
         position: fixed;
         top: 0;
