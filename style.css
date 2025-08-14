@@ -178,7 +178,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 40%;
+    width: 100%;
     color: var(--white);
     padding: 10px;
 }
@@ -286,7 +286,7 @@ body {
     position: relative;
     margin-top: 80px;
     height: calc(100vh - 80px);
-    overflow: hidden;
+    overflow: auto;
 }
 
 .main-content {
@@ -342,14 +342,6 @@ body {
     margin-top: 20px;
     font-size: 2rem;
 }
-
-#flashcard-section {
-    margin: 100px auto 0 auto;
-    /* top, sides auto, bottom */
-    max-width: 800px;
-    /* optional for nicer centering */
-}
-
 
 #flashcardForm {
     text-align: center;
@@ -538,8 +530,8 @@ body.flashcards {
     }
 
     #sideNav-button {
-        left: calc(100vw - 60px) !important;
-        top: 330px !important;
+        left: calc(100vw - 80px);
+        top: 330px;
     }
 
     #sidenav.collapsed {
@@ -548,18 +540,18 @@ body.flashcards {
         border-width: 0;
         overflow: hidden;
         pointer-events: none;
-        overflow: hidden;
     }
 
     .main-content {
-        position: fixed;
-        top: 290px;
-        height: 100vw;
+        position: relative;
+        top: 289px;
+        height: 100vh;
         transition: 0.3s ease;
     }
 
     #sidenav.collapsed~#sideNav-button {
-        top: 50px !important;
+        top: 50px;
+        border: solid red 10px;
     }
 
     #sidenav.collapsed~.main-content {
@@ -582,18 +574,25 @@ body.flashcards {
         font-size: 120px !important;
     }
 
+    .main-layout-area {
+        margin-top: 0;
+        height: 100vh
+    }
+
     #welcsummary {
         font-size: 70px !important;
         font-weight: 800;
     }
 
     .p1 {
-        font-size: 45px !important; /* test comment */
+        font-size: 45px !important;
+        /* test comment */
     }
 
     .p2 {
         font-size: 40px !important;
     }
+
 }
 
 /* end */

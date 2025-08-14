@@ -30,8 +30,12 @@ sideNavButton.onclick = function () {
   // Switch icon based on sidebar state
   if (sideNav.classList.contains("collapsed")) {
     sideNavButton.innerHTML = closeIcon;
+    sideNavButton.style.top = "50px";
+
   } else {
     sideNavButton.innerHTML = openIcon;
+    sideNavButton.style.top = "330px";
+
   }
 };
 
